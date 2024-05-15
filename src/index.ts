@@ -1,1 +1,2 @@
-console.log("Hello via Bun!");
+export { Origin } from "./origin";
+export { Power } from "./power";
