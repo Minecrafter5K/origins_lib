@@ -1,12 +1,12 @@
-import type { Power } from "./power";
+import type Power from "./power";
 
 export class Origin {
   powers: Power[] = [];
   constructor(
     public name: string,
-    private icon: string,
-    private order: number,
-    private impact: number
+    public icon: string,
+    public order: number,
+    public impact: number
   ) {}
 
   addPower(power: Power) {
@@ -14,18 +14,9 @@ export class Origin {
     return this;
   }
 
-  setIcon(icon: string) {
-    this.icon = icon;
-    return this;
-  }
-
-  get getIcon() {
-    return this.icon;
-  }
-
   build() {
     return JSON.stringify({
-      powers: this.powers.map((power) => power.id),
+      powers: this.powers.map((power) => power.getId),
       icon: this.icon,
       order: this.order,
       impact: this.impact,

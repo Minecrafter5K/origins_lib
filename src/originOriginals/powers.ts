@@ -1,7 +1,4 @@
-import { Power } from "../power";
+import { ExistingPower } from "../power";
 
-export const FALL_IMMUMITY = new Power("Acrobatics", "origins:fall_immunity");
-export const AERIAL_COMBATANT = new Power(
-  "Aerial Combatant",
-  "origins:aerial_combatant"
-);
+export const FALL_IMMUMITY = new ExistingPower("origins:fall_immunity");
+export const AERIAL_COMBATANT = new ExistingPower("origins:aerial_combatant");
