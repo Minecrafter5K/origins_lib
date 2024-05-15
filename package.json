@@ -6,6 +6,30 @@
     ".": {
       "import": "./src/index.ts",
       "require": "./src/index.js"
+    },
+    "./dataTypes/*": {
+      "import": "./src/power/dataTypes/**/*.ts",
+      "require": "./src/power/dataTypes/**/*.js"
+    },
+    "./powerTypes": {
+      "import": "./src/exports/PowerType.ts",
+      "require": "./src/exports/PowerType.js"
+    },
+    "./entityActions": {
+      "import": "./src/exports/EntityAction.ts",
+      "require": "./src/exports/EntityAction.js"
+    },
+    "./hudRenderer": {
+      "import": "./src/exports/HudRenderer.ts",
+      "require": "./src/exports/HudRenderer.js"
+    },
+    "./damageConditions": {
+      "import": "./src/exports/DamageCondition.ts",
+      "require": "./src/exports/DamageCondition.js"
+    },
+    "./targetConditions": {
+      "import": "./src/exports/TargetCondition.ts",
+      "require": "./src/exports/TargetCondition.js"
     }
   },
   "devDependencies": {

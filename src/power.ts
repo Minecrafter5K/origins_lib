@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import type { PowerType } from "./power/powerTypes/PowerType";
 
 export class ExistingPower implements Power {
   constructor(private id: string) {}
@@ -9,15 +10,21 @@ export class ExistingPower implements Power {
 }
 
 export class CustomPower implements Power {
-  private id: string;
+  private fullId: string;
 
-  constructor(private datapackId: string, private name?: string) {
-    const powerId = name || uuidv4();
-    this.id = `${datapackId}:${powerId}`;
+  constructor(
+    private datapackId: string,
+    public name: string,
+    public type: PowerType,
+    private id: string,
+    public description: string = ""
+  ) {
+    const powerId = id || uuidv4();
+    this.fullId = `${datapackId}:${powerId}`;
   }
 
   get getId() {
-    return this.id;
+    return this.fullId;
   }
 }
 

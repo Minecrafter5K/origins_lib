@@ -1,4 +1,4 @@
-import type Power from "./power";
+import type Power from "./Power";
 
 export class Origin {
   powers: Power[] = [];
