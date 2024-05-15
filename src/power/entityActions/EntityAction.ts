@@ -1,1 +1,1 @@
-export class EntityAction {}
+export interface EntityAction {}

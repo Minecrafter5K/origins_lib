@@ -1,22 +1,36 @@
 import type { Identifier } from "./Identifier";
 
 export class StatusEffectInstance {
-  constructor(private fields: Partial<fields> & { effect: Identifier }) {
-    this.fields = {
-      effect: fields.effect,
-      duration: fields.duration || 100,
-      amplifier: fields.amplifier || 0,
-      isAmbient: fields.isAmbient || false,
-      showParticles: fields.showParticles || false,
-      showIcon: fields.showIcon || false,
-    };
+  amplifier: number = 0;
+  duration: number = 100;
+  isAmbient: boolean = false;
+  showParticles: boolean = true;
+  showIcon: boolean = true;
+
+  constructor(public effect: Identifier) {}
+
+  withDuration(duration: number) {
+    this.duration = duration;
+    return this;
+  }
+
+  withAmplifier(amplifier: number) {
+    this.amplifier = amplifier;
+    return this;
+  }
+
+  withIsAmbient(isAmbient: boolean) {
+    this.isAmbient = isAmbient;
+    return this;
+  }
+
+  withShowParticles(showParticles: boolean) {
+    this.showParticles = showParticles;
+    return this;
+  }
+
+  withShowIcon(showIcon: boolean) {
+    this.showIcon = showIcon;
+    return this;
   }
 }
-
-type fields = {
-  duration: number;
-  amplifier: number;
-  isAmbient: boolean;
-  showParticles: boolean;
-  showIcon: boolean;
-};

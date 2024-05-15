@@ -1,1 +1,1 @@
-export class DamageCondition {}
+export interface DamageCondition {}

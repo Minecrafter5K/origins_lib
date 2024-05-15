@@ -1,9 +1,8 @@
 import type { StatusEffectInstance } from "../dataTypes/StatusEffectInstance";
-import { EntityAction } from "./EntityAction";
+import type { EntityAction } from "./EntityAction";
 
-export class ApplyEffect extends EntityAction {
+export class ApplyEffect implements EntityAction {
   constructor(public effect: StatusEffectInstance | StatusEffectInstance[]) {
-    super();
     if (!Array.isArray(effect)) {
       this.effect = [effect];
     }

@@ -1,1 +1,1 @@
-export class PowerType {}
+export interface PowerType {}

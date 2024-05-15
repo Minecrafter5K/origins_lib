@@ -10,21 +10,23 @@ export class ExistingPower implements Power {
 }
 
 export class CustomPower implements Power {
-  private fullId: string;
+  public description: string = "";
+  public id: string = uuidv4();
 
-  constructor(
-    private datapackId: string,
-    public name: string,
-    public type: PowerType,
-    private id: string,
-    public description: string = ""
-  ) {
-    const powerId = id || uuidv4();
-    this.fullId = `${datapackId}:${powerId}`;
-  }
+  constructor(public name: string, public type: PowerType) {}
 
   get getId() {
-    return this.fullId;
+    return this.id;
+  }
+
+  withId(id: string) {
+    this.id = this.id;
+    return this;
+  }
+
+  withDescription(description: string) {
+    this.description = description;
+    return this;
   }
 }
 

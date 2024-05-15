@@ -14,12 +14,12 @@ export class Origin {
     return this;
   }
 
-  build() {
-    return JSON.stringify({
-      powers: this.powers.map((power) => power.getId),
-      icon: this.icon,
-      order: this.order,
-      impact: this.impact,
-    });
-  }
+  // build() {
+  //   return JSON.stringify({
+  //     powers: this.powers.map((power) => power.getId),
+  //     icon: this.icon,
+  //     order: this.order,
+  //     impact: this.impact,
+  //   });
+  // }
 }

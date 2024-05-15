@@ -1,1 +1,1 @@
-export class TargetCondition {}
+export interface TargetCondition {}

@@ -1,1 +1,1 @@
-export class HudRenderer {}
+export interface HudRenderer {}
