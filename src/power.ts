@@ -1,5 +1,5 @@
 export class Power {
-  constructor(public name: string) {}
+  constructor(private name: string, private id: string) {}
 
   public get getName(): string {
     return this.name;

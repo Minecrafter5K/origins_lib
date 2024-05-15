@@ -6,6 +6,7 @@ export class Origin {
 
   addPower(power: Power) {
     this.powers.push(power);
-    console.log(`${this.name} has a new power power ${power.name}!`);
+    console.log(`${this.name} has a new power power ${power.getName}!`);
+    return this;
   }
 }
