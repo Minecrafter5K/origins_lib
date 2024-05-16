@@ -1,7 +1,7 @@
-import type Power from "./Power";
+import type IPower from "./Power";
 
 export class Origin {
-  powers: Power[] = [];
+  powers: IPower[] = [];
   constructor(
     public name: string,
     public icon: string,
@@ -9,7 +9,7 @@ export class Origin {
     public impact: number
   ) {}
 
-  addPower(power: Power) {
+  addPower(power: IPower) {
     this.powers.push(power);
     return this;
   }

@@ -30,6 +30,10 @@
     "./targetConditions": {
       "import": "./src/exports/TargetCondition.ts",
       "require": "./src/exports/TargetCondition.js"
+    },
+    "./dataTypes": {
+      "import": "./src/exports/DataType.ts",
+      "require": "./src/exports/DataType.js"
     }
   },
   "devDependencies": {

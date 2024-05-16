@@ -1,11 +1,21 @@
 import type { StatusEffectInstance } from "../dataTypes/StatusEffectInstance";
-import type { EntityAction } from "./EntityAction";
+import type { IEntityAction } from "./IEntityAction";
 
-export class ApplyEffect implements EntityAction {
+export class ApplyEffect implements IEntityAction {
+  effectArray: StatusEffectInstance[];
+
   constructor(public effect: StatusEffectInstance | StatusEffectInstance[]) {
     if (!Array.isArray(effect)) {
-      this.effect = [effect];
+      this.effectArray = [effect];
+    } else {
+      this.effectArray = effect;
     }
-    console.log(this.effect);
+  }
+
+  build() {
+    return {
+      type: "origins:apply_effect",
+      effect: this.effectArray.map((effect) => effect.build()),
+    };
   }
 }

@@ -1,6 +1,7 @@
+import type { IDataType } from "./IDataType";
 import type { Identifier } from "./Identifier";
 
-export class StatusEffectInstance {
+export class StatusEffectInstance implements IDataType, IStatusEffectInstance {
   amplifier: number = 0;
   duration: number = 100;
   isAmbient: boolean = false;
@@ -33,4 +34,26 @@ export class StatusEffectInstance {
     this.showIcon = showIcon;
     return this;
   }
+
+  build() {
+    return {
+      effect: this.effect.build(),
+      duration: this.duration,
+      amplifier: this.amplifier,
+      isAmbient: this.isAmbient,
+      showParticles: this.showParticles,
+      showIcon: this.showIcon,
+    };
+  }
+}
+
+export interface IStatusEffectInstance {
+  build(): {
+    effect: string;
+    duration: number;
+    amplifier: number;
+    isAmbient: boolean;
+    showParticles: boolean;
+    showIcon: boolean;
+  };
 }
