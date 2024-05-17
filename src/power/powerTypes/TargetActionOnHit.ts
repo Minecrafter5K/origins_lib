@@ -1,7 +1,7 @@
-import type { IDamageCondition } from "../damageConditions/IDamageCondition";
+import type { IDamageCondition } from "../conditions/damageConditions/IDamageCondition";
 import type { IEntityAction } from "../entityActions/IEntityAction";
 import type { IHudRenderer } from "../hudRenderer/IHudRenderer";
-import type { ITargetCondition } from "../targetConditions/ITargetCondition";
+import type { ITargetCondition } from "../conditions/targetConditions/ITargetCondition";
 import type { IPowerType } from "./IPowerType";
 
 export class TargetActionOnHit implements IPowerType {
