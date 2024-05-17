@@ -36,6 +36,9 @@ export class Transformer {
 
     await this.writePowers(powers);
     console.log("generated powers");
+
+    await this.writeLayers(this.origins);
+    console.log("generated layers");
   }
 
   private async prepDirs() {
@@ -52,6 +55,9 @@ export class Transformer {
 
     await mkdir(`./dist/data/${this.pack.id}/origins`, { recursive: true });
     await mkdir(`./dist/data/${this.pack.id}/powers`, { recursive: true });
+    await mkdir(`./dist/data/${this.pack.id}/origin_layers`, {
+      recursive: true,
+    });
   }
 
   private async writePackMcmeta() {
@@ -100,6 +106,23 @@ export class Transformer {
       return;
     }
   }
+
+  private async writeLayers(origins: Origin[]) {
+    const layers = {
+      replace: this.pack.replace || false,
+      origins: origins.map((origin) => `${this.pack.id}:${origin.id}`),
+    };
+
+    try {
+      Bun.write(
+        `./dist/data/${this.pack.id}/origin_layers/origin.json`,
+        JSON.stringify(layers)
+      );
+    } catch (error) {
+      console.warn("Error while writing layers", error);
+      return;
+    }
+  }
 }
 
 type Pack = {
@@ -107,4 +130,5 @@ type Pack = {
   id: string;
   packFormat: number;
   description?: string;
+  replace?: boolean;
 };
