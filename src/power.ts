@@ -7,10 +7,6 @@ export class ExistingPower implements IPower {
   get getId(): string {
     return this.id;
   }
-
-  transform() {
-    throw new Error("Method not implemented.");
-  }
 }
 
 export class CustomPower implements IPower {
@@ -35,12 +31,15 @@ export class CustomPower implements IPower {
 
   transform() {
     const { type, ...rest } = this.type.transform();
-    return JSON.stringify({
-      name: this.name,
-      description: this.description,
-      type: type,
-      ...rest,
-    });
+    return (
+      this.id,
+      {
+        name: this.name,
+        description: this.description,
+        type: type,
+        ...rest,
+      }
+    );
   }
 }
 
