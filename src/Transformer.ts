@@ -76,7 +76,7 @@ export class Transformer {
       origins.map((origin) => {
         Bun.write(
           `./dist/data/${this.pack.id}/origins/${origin.id}.json`,
-          JSON.stringify(origin.transform())
+          JSON.stringify(origin.transform(this.pack.id))
         );
       });
     } catch (error) {

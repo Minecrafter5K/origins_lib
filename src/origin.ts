@@ -26,9 +26,13 @@ export class Origin {
     return this.powers;
   }
 
-  transform() {
+  transform(packId: string) {
+    const powers = this.powers.map((power) => {
+      return `${packId}:${power.getId}`;
+    });
+
     return {
-      powers: this.powers.map((power) => power.getId),
+      powers: powers,
       icon: this.icon,
       order: this.order,
       impact: this.impact,
