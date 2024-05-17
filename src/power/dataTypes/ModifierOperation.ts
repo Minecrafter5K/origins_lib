@@ -3,7 +3,7 @@ import type { IDataType } from "./IDataType";
 export class ModifierOperation implements IDataType {
   constructor(private type: Operation) {}
 
-  build() {
+  transform() {
     return this.type;
   }
 }

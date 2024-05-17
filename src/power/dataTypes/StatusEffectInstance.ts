@@ -35,9 +35,9 @@ export class StatusEffectInstance implements IDataType, IStatusEffectInstance {
     return this;
   }
 
-  build() {
+  transform() {
     return {
-      effect: this.effect.build(),
+      effect: this.effect.transform(),
       duration: this.duration,
       amplifier: this.amplifier,
       isAmbient: this.isAmbient,
@@ -48,7 +48,7 @@ export class StatusEffectInstance implements IDataType, IStatusEffectInstance {
 }
 
 export interface IStatusEffectInstance {
-  build(): {
+  transform(): {
     effect: string;
     duration: number;
     amplifier: number;

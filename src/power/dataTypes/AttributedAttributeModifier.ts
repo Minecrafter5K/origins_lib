@@ -15,16 +15,16 @@ export class AttributedAttributeModifier implements IDataType, IModifier {
     return this;
   }
 
-  build() {
+  transform() {
     return {
       name: this.name,
-      attribute: this.attribute.build(),
+      attribute: this.attribute.transform(),
       value: this.value,
-      operation: this.operation.build(),
+      operation: this.operation.transform(),
     };
   }
 }
 
 export interface IModifier {
-  build(): { name?: string; attribute: any; value: number; operation: any };
+  transform(): { name?: string; attribute: any; value: number; operation: any };
 }

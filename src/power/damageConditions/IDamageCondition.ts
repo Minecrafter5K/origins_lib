@@ -1,3 +1,3 @@
 export interface IDamageCondition {
-  build(): any;
+  transform(): any;
 }

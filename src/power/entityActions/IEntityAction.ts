@@ -1,3 +1,3 @@
 export interface IEntityAction {
-  build(): { type: string };
+  transform(): { type: string };
 }

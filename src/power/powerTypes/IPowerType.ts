@@ -1,3 +1,3 @@
 export interface IPowerType {
-  build(): { type: string };
+  transform(): { type: string };
 }

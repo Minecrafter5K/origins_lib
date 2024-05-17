@@ -1,3 +1,3 @@
 export interface ITargetCondition {
-  build(): any;
+  transform(): any;
 }

@@ -14,7 +14,7 @@ export class Origin {
     return this;
   }
 
-  // build() {
+  // transform() {
   //   return JSON.stringify({
   //     powers: this.powers.map((power) => power.getId),
   //     icon: this.icon,

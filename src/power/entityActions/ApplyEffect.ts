@@ -12,10 +12,10 @@ export class ApplyEffect implements IEntityAction {
     }
   }
 
-  build() {
+  transform() {
     return {
       type: "origins:apply_effect",
-      effect: this.effectArray.map((effect) => effect.build()),
+      effect: this.effectArray.map((effect) => effect.transform()),
     };
   }
 }

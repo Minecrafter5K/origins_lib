@@ -1,3 +1,3 @@
 export interface IHudRenderer {
-  build(): any;
+  transform(): any;
 }

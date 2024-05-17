@@ -14,10 +14,10 @@ export class Attribute implements IPowerType {
     }
   }
 
-  build() {
+  transform() {
     return {
       type: "origins:attribute",
-      modifier: this.modifierArray.map((m) => m.build()),
+      modifier: this.modifierArray.map((m) => m.transform()),
     };
   }
 }

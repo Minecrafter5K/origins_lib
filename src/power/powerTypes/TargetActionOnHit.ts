@@ -26,14 +26,14 @@ export class TargetActionOnHit implements IPowerType {
     return this;
   }
 
-  build() {
+  transform() {
     return {
       type: "origins:target_action_on_hit",
-      entity_action: this.entityAction.build(),
+      entity_action: this.entityAction.transform(),
       cooldown: this.cooldown,
-      hudRenderer: this.hudRenderer?.build(),
-      damage_condition: this.damageCondetion?.build(),
-      target_condition: this.targetCondition?.build(),
+      hudRenderer: this.hudRenderer?.transform(),
+      damage_condition: this.damageCondetion?.transform(),
+      target_condition: this.targetCondition?.transform(),
     };
   }
 }

@@ -8,7 +8,7 @@ export class ExistingPower implements IPower {
     return this.id;
   }
 
-  build() {
+  transform() {
     throw new Error("Method not implemented.");
   }
 }
@@ -33,8 +33,8 @@ export class CustomPower implements IPower {
     return this;
   }
 
-  build() {
-    const { type, ...rest } = this.type.build();
+  transform() {
+    const { type, ...rest } = this.type.transform();
     return JSON.stringify({
       name: this.name,
       description: this.description,
