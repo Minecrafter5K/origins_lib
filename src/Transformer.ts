@@ -14,7 +14,7 @@ export class Transformer {
   async transform() {
     const powers = this.origins.map((origin) => origin.getPowers).flat();
     if (this.powers) {
-      powers.map((power) => powers.push(power));
+      this.powers.map((power) => powers.push(power));
     }
 
     console.log(
